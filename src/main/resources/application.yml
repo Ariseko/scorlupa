@@ -1,0 +1,25 @@
+server:
+  port: ${PORT:8000}
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: ${DATASOURCE_URL:jdbc:postgresql://localhost:5433/scorlupa}
+    username: ${DATASOURCE_USERNAME:postgres}
+    password: ${DATASOURCE_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      minimumIdle: 1
+      maximumPoolSize: 10
+      idleTimeout: 20000
+      auto-commit: false
+    name: PostgresDatasource
+  jpa:
+    database: postgresql
+    hibernate:
+      ddl-auto: none  # create-drop / none / validate
+    show-sql: true
+  sql:
+    init:
+      platform: postgres
+  liquibase:
+    change-log: db/master.yaml
