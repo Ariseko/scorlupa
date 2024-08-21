@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 @Validated
 @RequiredArgsConstructor
 @RequestMapping(
-        value = "trainig",
+        value = "training",
         produces = MediaType.APPLICATION_JSON_VALUE
 )
 public class TrainingController {
