@@ -20,6 +20,12 @@ public class UserRepositoryImpl implements UserRepository{
     }
 
     @Override
+    public UserEntity getByLogin(String username) {
+        return dao.findByLogin(username);
+    }
+
+
+    @Override
     public List<UserEntity> getAll() {
         return dao.findAll();
     }
